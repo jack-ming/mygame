@@ -1,8 +1,0 @@
-name = "life-path-simulator"
-compatibility_date = "2026-06-09"
-pages_build_output_dir = "dist"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "life-path-simulator-db"
-database_id = "<创建后填入>"
