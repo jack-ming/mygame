@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm install @lucide/vue)",
+      "Bash(npx vite --host 0.0.0.0)",
+      "Bash(timeout 5)",
+      "Bash(ping -n 4 127.0.0.)",
+      "Bash(npx vite build)",
+      "Bash(npm run build)",
+      "Bash(ren App.vue Game.vue)",
+      "Bash(npm install vue-router)",
+      "Bash(npm install vue-router@4)",
+      "Bash(del \"\\\\?\\\\D:\\\\self\\\\work_space\\\\parallel\\\\nul\")",
+      "Bash(powershell -Command \"Remove-Item -LiteralPath ''\\\\?\\\\D:\\\\self\\\\work_space\\\\parallel\\\\nul'' -Force\")",
+      "Bash(powershell -Command \"[System.IO.File]::Delete\\(''\\\\?\\\\D:\\\\self\\\\work_space\\\\parallel\\\\nul''\\)\")"
+    ]
+  }
+}

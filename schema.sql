@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS records (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  family_name TEXT NOT NULL,
+  talents TEXT NOT NULL DEFAULT '[]',
+  wealth INTEGER,
+  happiness INTEGER,
+  health INTEGER,
+  study INTEGER,
+  career INTEGER,
+  business INTEGER,
+  art INTEGER,
+  sport INTEGER,
+  social INTEGER,
+  network INTEGER,
+  grit INTEGER,
+  flags TEXT NOT NULL DEFAULT '{}',
+  log TEXT NOT NULL DEFAULT '[]',
+  ending_title TEXT NOT NULL,
+  ending_text TEXT NOT NULL,
+  composite_score INTEGER NOT NULL
+);
