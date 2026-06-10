@@ -1012,7 +1012,6 @@ function choose(option) {
   if (currentStage.value.ending) {
     game.value.finished = true
     addLog('阶段结算', endingText.value, 'good')
-    submitRecord()
     return
   }
 
@@ -1186,37 +1185,6 @@ function exportRecord() {
   a.download = `life-record-${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.json`
   a.click()
   URL.revokeObjectURL(url)
-}
-
-function submitRecord() {
-  const payload = {
-    family_name: game.value.family?.name || '',
-    talents: game.value.talents?.map((t) => t.name) || [],
-    wealth: game.value.wealth,
-    happiness: game.value.happiness,
-    health: game.value.health,
-    study: game.value.study,
-    career: game.value.career,
-    business: game.value.business,
-    art: game.value.art,
-    sport: game.value.sport,
-    social: game.value.social,
-    network: game.value.network,
-    grit: game.value.grit,
-    flags: { ...game.value.flags },
-    log: game.value.log.map((entry) => ({ title: entry.title, body: entry.body, tone: entry.tone })),
-    ending_title: endingTitle.value,
-    ending_text: endingText.value,
-    composite_score: compositeScore.value,
-  }
-
-  fetch('/api/records', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  }).catch((err) => {
-    console.warn('Failed to submit record:', err)
-  })
 }
 
 function importRecord(event) {
