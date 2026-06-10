@@ -7,3 +7,7 @@ export async function onRequestGet(context) {
     headers: { 'Content-Type': 'application/json' },
   })
 }
+
+export async function onRequestPost(context) {
+  return onRequestGet(context)
+}

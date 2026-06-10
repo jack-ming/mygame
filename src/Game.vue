@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import {
   Activity,
   Banknote,
@@ -1218,6 +1218,10 @@ function loadRecord(record) {
 function triggerFileInput() {
   fileInput.value?.click()
 }
+
+onMounted(() => {
+  fetch('/api/count', { method: 'POST' }).catch(() => {})
+})
 
 startGame()
 </script>

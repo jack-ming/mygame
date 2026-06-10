@@ -7,7 +7,7 @@ const count = ref(null)
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/count')
+    const res = await fetch('/api/visits')
     const data = await res.json()
     count.value = data.count
   } catch {
